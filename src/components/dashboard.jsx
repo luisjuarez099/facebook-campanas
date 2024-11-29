@@ -79,7 +79,7 @@ const Dashboard = () => {
   }
 
   const handleSubmit = () => {
-    debugger;
+    // debugger;
     console.log("Enviando formulario"+campaignData);
     fetch("http://localhost:3001/campanas", {
       method: "POST",
@@ -88,9 +88,10 @@ const Dashboard = () => {
       },
       body: JSON.stringify(campaignData),
     })
-      // .finally(() => {
-      //   window.location.reload();
-      // });
+    .catch((error)=>{
+      console.error(error);
+    })
+     
     
     // console.log(campaignData);
   };
@@ -125,7 +126,6 @@ const Dashboard = () => {
           <input type="number" name="intervalo" min="3" max="20" onChange={(e)=>handleMain(parseInt(e.target.value), "intervalo")}/>
           {/* <label>Solicitudes de unión a grupos</label>
           <input type="text" name="groupRequests" /> */}
-          <button type="submit">Guardar</button>
 
           <div>
             <h2>Visualización de Campañas</h2>
@@ -160,6 +160,7 @@ const Dashboard = () => {
           </div>
         </div>
       </form>
+      <button onClick={()=>handleSubmit()} type="submit">Guardar</button>
     </div>
   );
 };
