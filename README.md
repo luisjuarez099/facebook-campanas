@@ -1,3 +1,41 @@
+# Facebook Campaigns  
+
+## How to start the project?
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/luisjuarez099/facebook-campanas.git
+```
+
+### 2. Locate in the project folder
+
+```bash
+cd facebook-campanas
+```
+
+### 3. Create Python virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Install Python requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Install Node.js requirements
+
+```bash
+npm install
+```
+
+## Run the React App
+```bash
+npm start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
