@@ -105,7 +105,7 @@ const Login = () => {
             >
               
               <button>
-                <a href="#/dashboard" >Iniciar Sesión</a>
+                <a href="/dashboard" >Iniciar Sesión</a>
               </button>
                 
             </div>

@@ -93,8 +93,6 @@ const Dashboard = () => {
     }).finally(()=>{
       window.location.reload();
     })
-     
-    
     // console.log(campaignData);
   };
 
@@ -153,6 +151,7 @@ const Dashboard = () => {
                   }}
                 >
                   <h3>{campana.nombre}</h3>
+                  <p>{campana.id}</p>
                   <p>{campana.descripcion}</p>
                   <p>{campana.palabras_clave}</p>
                   <p>{campana.estado}</p>
