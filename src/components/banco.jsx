@@ -29,3 +29,8 @@ const Banco = () =>{
 }
 
 export default Banco;
+
+/**
+ * En esta pagina lo que se va a hacer es mostrar todas las campañas que se han creado
+ * Actualizar y eliminar campanas
+ */
