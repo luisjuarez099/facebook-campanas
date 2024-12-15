@@ -88,18 +88,11 @@ const Dashboard = () => {
       },
       body: JSON.stringify(campaignData),
     })
-<<<<<<< HEAD
     .catch((error)=>{
       console.error(error);
     }).finally(()=>{
       window.location.reload();
     })
-=======
-      // .finally(() => {
-      //   window.location.reload();
-      // });
-    
->>>>>>> master
     // console.log(campaignData);
   };
 
