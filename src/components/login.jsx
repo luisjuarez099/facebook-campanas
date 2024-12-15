@@ -103,11 +103,9 @@ const Login = () => {
                 // border: "1px solid",
               }}
             >
-              
               <button>
                 <a href="/dashboard" >Iniciar Sesión</a>
               </button>
-                
             </div>
           </div>
         </div>
