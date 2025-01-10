@@ -1,117 +1,127 @@
 import React from "react";
-import { useState } from "react";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleUserName = (e) => {
-    console.log(e.target.value);
-  };
-  const handlePasswd = (e) => {
-    console.log(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Evita que se envíe el formulario y los datos vayan a la URL
-    alert("Inicio de sesión exitoso");
-
-  };
-  return (
-    <div>
-      <h1>Login</h1>
-
-      <form onSubmit={handleSubmit} >
-        <div
-          style={{
-            // border: "1px solid black",
-            width: "100%",
-            height: "10%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
+    return (
+      <div style={{
+        fontFamily: 'Roboto, sans-serif',
+        backgroundColor: '#34495e',
+        margin: 0,
+        padding: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}>
+        <div style={{
+          backgroundColor: '#16213e',
+          padding: '40px',
+          borderRadius: '15px',
+          boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)',
+          width: '350px',
+          textAlign: 'center',
+          color: '#fff',
+        }}>
+          {/* Imagen encabezado */}
+          <img
+            src="https://i.pinimg.com/originals/e5/6b/84/e56b841924ac729935e858cb59535fb7.png"
+            alt=" "
             style={{
-              height: "250px",
-              width: "350px",
-              border: "1px solid",
-              padding: "5px",
+              width: '240px',
+              height: '240px',
+              marginBottom: '20px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: '3px solid #f39c12',
             }}
-          >
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: "8px",
-                  fontWeight: "bold",
-                  fontSize: "14px",
-                  color: "#555",
-                }}
-                htmlFor="username"
-              >
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                onChange={handleUserName}
-                style={{
-                  width: "330px",
-                  padding: "10px",
-                  borderRadius: "4px",
-                  border: "1px solid #ccc",
-                  fontSize: "14px",
-                }}
-              />
-            </div>
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: "8px",
-                  fontWeight: "bold",
-                  fontSize: "14px",
-                  color: "#555",
-                }}
-                htmlFor="password"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                onChange={handlePasswd}
-                style={{
-                  width: "330px",
-                  padding: "10px",
-                  borderRadius: "4px",
-                  border: "1px solid #ccc",
-                  fontSize: "14px",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                marginTop: "2px",
-                justifyContent: "right",
-                display: "flex",
-                width: "auto",
-                // border: "1px solid",
-              }}
+          />
+          <h2 style={{
+            fontSize: '26px',
+            marginBottom: '20px',
+            color: '#f39c12',
+          }}>Bienvenido</h2>
+          <form action="#" method="POST">
+            <label htmlFor="username" style={{
+              fontSize: '14px',
+              color: '#ddd',
+              display: 'block',
+              marginBottom: '8px',
+            }}>Usuario</label>
+            <input type="text" id="username" name="username" required style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '15px',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              boxSizing: 'border-box',
+              backgroundColor: '#1f4068',
+              color: '#fff',
+              outline: 'none',
+            }} />
+            <label htmlFor="password" style={{
+              fontSize: '14px',
+              color: '#ddd',
+              display: 'block',
+              marginBottom: '8px',
+            }}>Contraseña</label>
+            <input type="password" id="password" name="password" required style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '20px',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              boxSizing: 'border-box',
+              backgroundColor: '#1f4068',
+              color: '#fff',
+              outline: 'none',
+            }} />
+            <button type="submit" style={{
+              width: '100%',
+              padding: '12px',
+              backgroundColor: '#f39c12',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '16px',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s',
+            }}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#d35400'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#f39c12'}
             >
-              <button>
-                <a href="/dashboard" >Iniciar Sesión</a>
-              </button>
-            </div>
+              Iniciar sesión
+            </button>
+          </form>
+          <div style={{
+            marginTop: '20px',
+          }}>
+            <a href="#" style={{
+              fontSize: '14px',
+              color: '#f39c12',
+              textDecoration: 'none',
+              marginRight: '10px',
+              transition: 'color 0.3s',
+            }}
+              onMouseOver={(e) => e.target.style.color = '#d35400'}
+              onMouseOut={(e) => e.target.style.color = '#f39c12'}
+            >¿Olvidaste tu contraseña?</a>
+            <br />
+            <a href="#" style={{
+              fontSize: '14px',
+              color: '#f39c12',
+              textDecoration: 'none',
+              transition: 'color 0.3s',
+            }}
+              onMouseOver={(e) => e.target.style.color = '#d35400'}
+              onMouseOut={(e) => e.target.style.color = '#f39c12'}
+            >Crear una cuenta</a>
           </div>
         </div>
-      </form>
-    </div>
-  );
-};
-
-export default Login;
+      </div>
+    );
+  };
+  
+  export default Login;
+  
+  

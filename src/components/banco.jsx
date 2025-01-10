@@ -83,19 +83,31 @@ const Banco = () => {
   };
 
   return (
-    <div>
-      <div className="container-banco">
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <p>Banco de campañas</p>
-        </div>
-        <div style={{ position: "relative" }}>
+    <div
+      style={{
+        backgroundColor: "#1a1a2e",
+        minHeight: "100vh",
+        padding: "20px",
+        color: "#fff",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <div className="container-banco" style={{ textAlign: "center", marginBottom: "20px" }}>
+        <h1 style={{ color: "#f39c12", marginBottom: "20px" }}>Banco </h1>
+        <h1 style={{ color: "#f39c12", marginBottom: "20px" }}> de </h1>
+        <h1 style={{ color: "#f39c12", marginBottom: "20px" }}> Campañas</h1>
+        <div style={{ position: "relative", maxWidth: "500px", margin: "0 auto" }}>
           <input
             type="text"
             style={{
               width: "100%",
               border: "1px solid #ddd",
-              padding: "0.5rem 0.75rem",
-              borderRadius: "0.375rem",
+              padding: "12px",
+              borderRadius: "8px",
+              fontSize: "16px",
+              backgroundColor: "#16213e",
+              color: "#fff",
+              outline: "none",
             }}
             value={query}
             placeholder="Buscar campaña"
@@ -108,12 +120,12 @@ const Banco = () => {
               style={{
                 position: "absolute",
                 zIndex: 10,
-                marginTop: "0.25rem",
+                marginTop: "8px",
                 width: "100%",
-                border: "1px solid #ddd",
-                borderRadius: "0.375rem",
+                borderRadius: "8px",
                 backgroundColor: "#fff",
-                overflow: "auto",
+                overflow: "hidden",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 maxHeight: "200px",
               }}
             >
@@ -122,8 +134,10 @@ const Banco = () => {
                   key={campana.id}
                   onClick={() => handleSelect(campana.nombre)}
                   style={{
-                    padding: "0.5rem 0.75rem",
+                    padding: "10px",
                     cursor: "pointer",
+                    borderBottom: "1px solid #ddd",
+                    backgroundColor: "#f4f4f4",
                   }}
                 >
                   {campana.nombre}
@@ -132,34 +146,72 @@ const Banco = () => {
             </div>
           )}
           {isOpen ? (
-            <IoIosArrowUp style={{ position: "absolute", right: "10px", top: "10px" }} />
+            <IoIosArrowUp style={{ position: "absolute", right: "10px", top: "15px", color: "#fff" }} />
           ) : (
-            <IoIosArrowDown style={{ position: "absolute", right: "10px", top: "10px" }} />
+            <IoIosArrowDown style={{ position: "absolute", right: "10px", top: "15px", color: "#fff" }} />
           )}
         </div>
       </div>
 
-      <div>
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         {editCampana ? (
           <form onSubmit={handleUpdate} style={{ marginBottom: "20px" }}>
-            <h3>Editar Campaña</h3>
+            <h3 style={{ color: "#f39c12" }}>Editar Campaña</h3>
             <input
               type="text"
               value={editCampana.nombre}
               onChange={(e) =>
                 setEditCampana({ ...editCampana, nombre: e.target.value })
               }
-              style={{ marginBottom: "10px" }}
+              style={{
+                width: "100%",
+                padding: "10px",
+                marginBottom: "10px",
+                borderRadius: "8px",
+                backgroundColor: "#16213e",
+                color: "#fff",
+                border: "1px solid #f39c12",
+              }}
             />
             <textarea
               value={editCampana.descripcion}
               onChange={(e) =>
                 setEditCampana({ ...editCampana, descripcion: e.target.value })
               }
-              style={{ marginBottom: "10px", width: "100%" }}
+              style={{
+                width: "100%",
+                padding: "10px",
+                marginBottom: "10px",
+                borderRadius: "8px",
+                backgroundColor: "#16213e",
+                color: "#fff",
+                border: "1px solid #f39c12",
+              }}
             />
-            <button type="submit">Guardar cambios</button>
-            <button type="button" onClick={() => setEditCampana(null)}>
+            <button
+              type="submit"
+              style={{
+                padding: "10px 20px",
+                marginRight: "10px",
+                borderRadius: "8px",
+                backgroundColor: "#f39c12",
+                color: "#fff",
+                border: "none",
+              }}
+            >
+              Guardar cambios
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditCampana(null)}
+              style={{
+                padding: "10px 20px",
+                borderRadius: "8px",
+                backgroundColor: "#d35400",
+                color: "#fff",
+                border: "none",
+              }}
+            >
               Cancelar
             </button>
           </form>
@@ -168,19 +220,42 @@ const Banco = () => {
             <div
               key={campana.id}
               style={{
-                border: "1px solid #ccc",
+                backgroundColor: "#16213e",
+                color: "#fff",
                 padding: "20px",
                 borderRadius: "8px",
-                margin: "10px",
-                backgroundColor: "#f9f9f9",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                marginBottom: "15px",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             >
-              <h3>{campana.nombre}</h3>
+              <h3 style={{ color: "#f39c12" }}>{campana.nombre}</h3>
               <p>ID: {campana.id}</p>
               <p>Descripción: {campana.descripcion}</p>
-              <button onClick={() => handleEdit(campana)}>Editar</button>
-              <button onClick={() => handleDelete(campana.id)}>Eliminar</button>
+              <button
+                onClick={() => handleEdit(campana)}
+                style={{
+                  padding: "8px 16px",
+                  marginRight: "10px",
+                  borderRadius: "8px",
+                  backgroundColor: "#f39c12",
+                  color: "#fff",
+                  border: "none",
+                }}
+              >
+                Editar
+              </button>
+              <button
+                onClick={() => handleDelete(campana.id)}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: "8px",
+                  backgroundColor: "#d35400",
+                  color: "#fff",
+                  border: "none",
+                }}
+              >
+                Eliminar
+              </button>
             </div>
           ))
         )}
@@ -190,3 +265,4 @@ const Banco = () => {
 };
 
 export default Banco;
+
